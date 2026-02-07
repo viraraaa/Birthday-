@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Indri 🎉</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #9fd3ff, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Comic Sans MS', cursive;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      color: #0077cc;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .doraemon {
+      width: 180px;
+      margin: 20px auto;
+      animation: jump 1.2s infinite;
+    }
+
+    @keyframes jump {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-25px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      font-size: 40px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-120vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🎂 Happy Birthday 🎂</h1>
+    <h2>Indri Febriyani 💙</h2>
+
+    <img 
+      src="https://upload.wikimedia.org/wikipedia/en/b/bd/Doraemon_character.png" 
+      alt="Doraemon"
+      class="doraemon"
+    >
+
+    <p>
+      Semoga hari ini penuh senyum,  
+      tawa, dan hal-hal baik ✨  
+      Panjang umur, sehat selalu,  
+      dan semoga semua harapan tercapai 💫
+    </p>
+  </div>
+
+  <!-- Balon -->
+  <script>
+    const emojis = ["🎈", "🎉", "💙", "⭐"];
+    setInterval(() => {
+      const balloon = document.createElement("div");
+      balloon.className = "balloon";
+      balloon.style.left = Math.random() * 100 + "vw";
+      balloon.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      document.body.appendChild(balloon);
+
+      setTimeout(() => {
+        balloon.remove();
+      }, 6000);
+    }, 800);
+  </script>
+
+</body>
+</html>
